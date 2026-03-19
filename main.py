@@ -1,4 +1,4 @@
-import flask , mysql.connector , random
+import flask , mysql.connector , random , time
 
 from flask import *
 
@@ -10,10 +10,7 @@ print("db connection : " ,myconn)
 
 myapp = Flask(__name__)
 
-
-@myapp.route("/")
-def home():
-    return render_template("home.html")
+myapp.secret_key = "billiejean##notmylover&&&"
 
 @myapp.route("/login")
 def login():
@@ -25,12 +22,14 @@ def signup():
 
 @myapp.route("/submit", methods=['POST'])
 def submit():
-    print("bitch look at me")
+    
+
     uid = random.randint(0,1000)
     username = request.form.get("username")
     email = request.form.get("email")
     password = request.form.get("password")
-    name = request.form.get("name")
+    name = request.form.get("full_name")
+
 
     try:
         query = "INSERT INTO users VALUES (%s, %s, %s, %s, %s)"
@@ -39,14 +38,52 @@ def submit():
         mycur.execute(query, values)
         myconn.commit()
 
-        print("inserted data", uid, username, email, password, name)
-        return "Signup successful"
+        session['user'] = username
 
-    except Exception as e:
-        print("Error:", e)
-        return "Signup failed"
+        print("inserted data", uid, username, email, password, name)
+        return redirect("/") 
+    
     
 
+    except Exception as e:
+        print(e)
+        return redirect("/signup")
+
+
+
+
+@myapp.route("/")
+def home():
+    if 'user' in session:
+        return render_template("home.html",logged_in = True , user = session['user'])
+    else:
+        return render_template("home.html" , logged_in = False)
+
+@myapp.route("/logout")
+def logout():
+    session.pop('user',None)
+    return redirect('/')
+
+@myapp.route("/loginsubmit", methods=['POST'])
+def loginsubmit():
+    username = request.form.get("username")
+    password = request.form.get("password")
+
+    print(username , password)
+
+    mycur.execute("SELECT * FROM users WHERE username = %s AND password = %s",(username,password))
+
+    user = mycur.fetchone()
+
+    if user:
+        print("found")
+        session['user'] = username
+        return redirect("/")
+    else:
+        return redirect("/login")
+    
+
+    
 
 if __name__ == "__main__":
     myapp.run(debug=True)
