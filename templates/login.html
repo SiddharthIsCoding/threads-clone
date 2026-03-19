@@ -45,12 +45,20 @@
     </style>
 </head>
 <body>
-    <form action="">
+    <form action="/submit" method="POST" id="loginform" >
         <h1>LOGIN</h1>
         <input type="text" name="username" id="username" placeholder="Enter username" ><br>
         <input type="password" name="password" id="password" placeholder="Enter password" ><br>
         <button>Log in</button>
     </form>
+
+
+    <script>
+        document.querySelector("#loginform").addEventListener("submit", (e) => {
+            e.preventDefault();
+            console.log("prevented ")
+        })
+    </script>
 
 </body>
 </html>

@@ -4,8 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+        }
+
+        input{
+            width: 40%;
+            height: 50px;
+            background: transparent;
+            border: 1px solid black;
+            outline: none;
+            font-size: 20px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+
+        button
+        {
+            width: 100px;
+            height: 40px;
+            background: limegreen;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        form
+        {
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 15vh;
+        }
+
+
+    </style>
 </head>
 <body>
-    sign up page
+    <form action="/submit" method="POST"  id="signupform">
+        <h1>Sign Up</h1>
+        <input type="text" name="full_name" id="full_name" placeholder="Enter your full name" ><br>
+        <input type="email" name="email" id="email" placeholder="Enter your email address @" ><br>
+        <input type="text" name="username" id="username" placeholder="Create a username" ><br>
+        <input type="password" name="password" id="password" placeholder="Create a password" ><br>
+        <button>Sign up</button>
+    </form>
+
+
+    <script>
+        document.querySelector("#signupform").addEventListener('submit', (e) => {
+            e.preventDefault();
+            console.log("prevented")
+        })
+    </script>
+
 </body>
 </html>
