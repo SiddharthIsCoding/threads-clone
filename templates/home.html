@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style/home.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
-    <h1>this is the home page</h1>
-    {% if logged_in %}
-       <h1>Welcome {{user}}</h1>
-       <a href="/logout">Log out</a>
-    {% else %}
-       <h1>Log in - <a href="/login">login</a></h1>
-       <a href="/signup">sign up</a><br>
-    {% endif %}
+    
+    <nav>
+        <ul>
+            {% if logged_in == True %}
+               <li><a href="#">{{user}}</a></li>
+            {% else %}
+               <li><a href="#">Login</a></li>
+            {% endif %}
+            <li><a href="#">Chat</a></li>
+            <li><a href="#">Settings</a></li>
+               
+        </ul>
+    </nav>
+    
 </body>
 </html>
