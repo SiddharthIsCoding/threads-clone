@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="static/style.css">
+    <title>profile</title>
+    <link rel="stylesheet" href="./static/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/7526f4dec5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    
+
     <nav>
         <ul>
             {% if logged_in == True %}
-               <li><a href="/profile"><i class="fa fa-user" style="font-size:36px"></i></a></li>
+               <li><a href="/"><i class="fa-solid fa-house" style="font-size: 36px;" ></i></a></li>
                <li><a href="#"><i class="fa-solid fa-comment-dots" style="font-size: 36px;" ></i></a></li>
                <li><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket" style="font-size: 36px;color: red;" ></i></a></li>
 

@@ -82,7 +82,10 @@ def loginsubmit():
     else:
         return redirect("/login")
     
-
+@myapp.route("/profile")
+def profile():
+    return render_template('profile.html',logged_in=True, user = session['user'])
+    
     
 
 if __name__ == "__main__":
