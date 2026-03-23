@@ -21,6 +21,13 @@ nav
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
     padding: 15px;
+    transform: translate(-70%);
+    transition: 0.3s;
+}
+
+nav:hover
+{
+    transform: translate(-20%);
 }
 
 
@@ -42,4 +49,12 @@ nav > ul > li > a
     height:100%;
     text-align: center;
     padding: 5px;
+    transition: 0.3s;
 }
+
+nav > ul > li > a:hover
+{
+    transform: scale(1.5);
+}
+
+/* common part */ 
