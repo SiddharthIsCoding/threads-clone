@@ -78,6 +78,7 @@ def loginsubmit():
     if user:
         print("found")
         session['user'] = username
+        
         return redirect("/")
     else:
         return redirect("/login")

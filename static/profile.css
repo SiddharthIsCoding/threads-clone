@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 
 *
 {
@@ -58,3 +60,44 @@ nav > ul > li > a:hover
 }
 
 /* common part */ 
+
+
+#profilesection
+{
+    width: 80%;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    padding: 30px;
+    position: relative;
+}
+
+#profilesection > h1
+{
+    color: aliceblue;
+    font-size: 35px;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* #profilesection > button
+{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+} */
+
+.btn
+{
+    width: 100px;
+    height: 40px;
+    background: purple;
+    color: white;
+    font-size: 20px;
+    font-family: 'Open Sans',sans-serif;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+}
