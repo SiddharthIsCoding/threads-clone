@@ -83,19 +83,31 @@ def loginsubmit():
     else:
         return redirect("/login")
     
-@myapp.route("/<username>")
+@myapp.route("/profile/<username>")
 def profile(username):
+
+    mycur.execute("SELECT * FROM users WHERE username = %s",(username,))
+
+    valid = mycur.fetchone()
+
+
+
     cur_user = session.get("user")
 
 
-    if cur_user: 
+
+    if cur_user and valid: 
        return render_template("profile.html" , logged_in = True,
                            profile_user = username,
                            current_user = cur_user,
                            isOwnProfile = (username == cur_user))
+    
+    elif valid and not cur_user:
+        return render_template("profile.html" , logged_in = False,
+                               profile_user = username)
+    
     else:
-        return render_template("profile.html",logged_in = False,
-                               profile_user=username)
+        return "no such user exists"
 
 
 if __name__ == "__main__":
