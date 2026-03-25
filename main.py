@@ -83,11 +83,20 @@ def loginsubmit():
     else:
         return redirect("/login")
     
-@myapp.route("/profile")
-def profile():
-    return render_template('profile.html',logged_in=True, user = session['user'])
-    
-    
+@myapp.route("/<username>")
+def profile(username):
+    cur_user = session.get("user")
+
+
+    if cur_user: 
+       return render_template("profile.html" , logged_in = True,
+                           profile_user = username,
+                           current_user = cur_user,
+                           isOwnProfile = (username == cur_user))
+    else:
+        return render_template("profile.html",logged_in = False,
+                               profile_user=username)
+
 
 if __name__ == "__main__":
     myapp.run(debug=True)
