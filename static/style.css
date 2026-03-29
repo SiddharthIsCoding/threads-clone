@@ -10,6 +10,17 @@ body
     background: #0F0A1F;
 }
 
+#main::-webkit-scrollbar
+{
+    background: transparent;
+    width: 3px;
+}
+
+#main::-webkit-scrollbar-thumb
+{
+    background: purple ;
+}
+
 nav
 {
     width: 10%;
@@ -93,7 +104,7 @@ nav > ul > li > a:hover
     left: calc(50% - 40px);
     bottom: 50px;
     transition: 0.5s;
-
+    z-index: 100;
 }
 
 #thebutton:hover
@@ -111,8 +122,55 @@ nav > ul > li > a:hover
 {
     width: 80%;
     height: 90vh;
-    background: yellow;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vh;
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+#post
+{
+    width: 100%;
+    min-height: 10%;
+    background: #0F0A1F;
+    border-radius: 10px;
+    border: 0.5px solid #FF10F0;
+    margin-top: 15px;
+    padding: 15px;
+    color: aliceblue;
+    text-align: left;
+
+}
+
+
+#postform
+{
+    width: 30%;
+    height: 80vh;
+    background:#7f2e79;
+    position: absolute;
+    top: 50px;
+    left: 35%;
+    border-radius: 10px;
+    z-index: 300;
+    border: 0.5px solid #FF10F0;
+    padding: 30px;
+    text-align: center;
+    font-family: 'Open Sans',sans-serif;
+    color: aliceblue;
+}
+
+#filter
+{
+    width: 100%;
+    height: 100vh;
+    z-index: 200;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0px;
+    left:0px;
 }
