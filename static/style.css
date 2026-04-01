@@ -162,6 +162,7 @@ nav > ul > li > a:hover
     text-align: center;
     font-family: 'Open Sans',sans-serif;
     color: aliceblue;
+    box-shadow: 0px 0px 10px #FF10F0;
 }
 
 #filter
@@ -173,4 +174,9 @@ nav > ul > li > a:hover
     position: absolute;
     top: 0px;
     left:0px;
+}
+
+#postform > form > input
+{
+    
 }
