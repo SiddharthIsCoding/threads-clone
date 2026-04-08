@@ -46,7 +46,7 @@
 
 
     <div id="postform" >
-        <h1>Time to cook</h1>
+        <h1>Let's cook</h1>
         <br>
         <form action="#">
             <input placeholder=" Post title "  type="text" name="postheader" id="pheader">
@@ -56,6 +56,19 @@
             <button style="background: #710268; box-shadow: 10px 10px 0px black;"  class="btn" type="submit" ><i class="fa-solid fa-paper-plane"></i></button>
         </form>
     </div>
+
+
+    <script>
+        document.querySelector("#filter").addEventListener('click',()=>{
+            document.querySelector("#filter").style.display = "none";
+            document.querySelector("#postform").style.display = "none";
+        })
+
+        document.querySelector("#thebutton").addEventListener("click",()=>{
+            document.querySelector("#filter").style.display = "block";
+            document.querySelector("#postform").style.display = "block";
+        })
+    </script>
 
     
 </body>
