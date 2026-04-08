@@ -150,10 +150,10 @@ nav > ul > li > a:hover
 #postform
 {
     width: 30%;
-    height: 80vh;
+    min-height: 40vh;
     background:#7f2e79;
     position: absolute;
-    top: 50px;
+    top: 15vh;
     left: 35%;
     border-radius: 10px;
     z-index: 300;
@@ -188,6 +188,7 @@ nav > ul > li > a:hover
     font-size: 20px;
     font-family: 'Open Sans',sans-serif;
     outline: none;
+    box-shadow: 10px 10px 0px black;
 }
 
 #postform > form > textarea 
@@ -202,4 +203,6 @@ nav > ul > li > a:hover
     font-size: 20px;
     font-family: 'Open Sans',sans-serif;
     outline: none;
+    box-shadow: 10px 10px 0px black;
+
 }
